@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgraund"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="progressBar">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="117dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="300dp"
+            android:fontFamily="serif"
+            android:text="Жиры:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="117dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="236dp"
+            android:fontFamily="serif"
+            android:text="Белки:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="117dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="176dp"
+            android:fontFamily="serif"
+            android:text="Углеводы:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="67dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/unchoose"
+                android:onClick="navigationSport"
+                android:scaleType="centerInside"
+                android:src="@drawable/barbell_metall_penis" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/choose"
+                android:scaleType="centerInside"
+                android:src="@drawable/chiken_in_my_ass" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/unchoose"
+                android:onClick="navigationSettings"
+                android:scaleType="centerInside"
+                android:src="@drawable/set_my_penis" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarKall"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="364dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="144dp"
+            android:max="100"
+            android:progressDrawable="@drawable/food_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBarProtein"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="364dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="272dp"
+            android:max="100"
+            android:progressDrawable="@drawable/food_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBarCarbo"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="364dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="208dp"
+            android:max="100"
+            android:progressDrawable="@drawable/food_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBarFats"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="364dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="336dp"
+            android:max="100"
+            android:progressDrawable="@drawable/food_progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="117dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="108dp"
+            android:fontFamily="serif"
+            android:text="Каллории:"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>
