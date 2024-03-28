@@ -31,8 +31,7 @@ class Food : ComponentActivity() {
         setContentView(R.layout.activity_food)
         readFromFileNorma()
         readFromFileToday()
-        val textView: TextView = findViewById(R.id.kall)
-        textView.text = "$nowKall/$kall"
+        fillProgressBar()
     }
 
     fun navigationSport(v: View) {
@@ -45,40 +44,54 @@ class Food : ComponentActivity() {
     }
 
     fun readFromFileNorma() {
+        val lines: List<String> = applicationContext.assets
+            .open("norma.txt")
+            .bufferedReader()
+            .use {
+                it.readLines()
+            }
 
-        var inputStreamReader = InputStreamReader(FileInputStream(System.getenv("/home/net0pyr/zapisyakal/app/norma")))
-        var reader = BufferedReader(inputStreamReader)
-        var fileArray = mutableListOf<String>()
-        var line: String?
-        while(reader.readLine().also { line = it } != null) {
-            fileArray.add(line!!)
-        }
-
-        carbo = fileArray[0].toInt()
-        protein = fileArray[1].toInt()
-        fats = fileArray[2].toInt()
+        carbo = lines[0].toInt()
+        protein = lines[1].toInt()
+        fats = lines[2].toInt()
 
         kall = 4*carbo+4*protein+9*fats
-
-        reader.close()
-
     }
 
     fun readFromFileToday() {
-        var inputStreamReader = InputStreamReader(FileInputStream(System.getenv("/home/net0pyr/zapisyakal/app/todayFood")))
-        var reader = BufferedReader(inputStreamReader)
-        var fileArray = mutableListOf<String>()
-        var line: String?
-        while(reader.readLine().also { line = it } != null) {
-            fileArray.add(line!!)
-        }
+        val lines: List<String> = applicationContext.assets
+            .open("todayFood.txt")
+            .bufferedReader()
+            .use {
+                it.readLines()
+            }
 
-        nowCarbo = fileArray[0].toInt()
-        nowProtein = fileArray[1].toInt()
-        nowFats = fileArray[2].toInt()
+        nowCarbo = lines[0].toInt()
+        nowProtein = lines[1].toInt()
+        nowFats = lines[2].toInt()
 
-        nowKall = 4*carbo+4*protein+9*fats
+        nowKall = 4*nowCarbo+4*nowProtein+9*nowFats
+    }
 
-        reader.close()
+    fun fillProgressBar() {
+        val progressBarKall: ProgressBar = findViewById(R.id.progressBarKall)
+        progressBarKall.progress += (nowKall.toDouble()/kall.toDouble()*100).toInt()
+        val textViewKall: TextView = findViewById(R.id.kall)
+        textViewKall.text = "$nowKall/$kall"
+
+        val progressBarCarbons: ProgressBar = findViewById(R.id.progressBarCarbo)
+        progressBarCarbons.progress += (nowCarbo.toDouble()/carbo.toDouble()*100).toInt()
+        val textViewCarbons: TextView = findViewById(R.id.carbons)
+        textViewCarbons.text = "$nowCarbo/$carbo"
+
+        val progressBarProteins: ProgressBar = findViewById(R.id.progressBarProtein)
+        progressBarProteins.progress += (nowProtein.toDouble()/protein.toDouble()*100).toInt()
+        val textViewProteins: TextView = findViewById(R.id.proteins)
+        textViewProteins.text = "$nowProtein/$protein"
+
+        val progressBarFats: ProgressBar = findViewById(R.id.progressBarFats)
+        progressBarFats.progress += (nowFats.toDouble()/fats.toDouble()*100).toInt()
+        val textViewFats: TextView = findViewById(R.id.fats)
+        textViewFats.text = "$nowFats/$fats"
     }
 }
