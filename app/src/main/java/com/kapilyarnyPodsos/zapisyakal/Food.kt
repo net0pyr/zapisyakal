@@ -43,6 +43,8 @@ class Food : ComponentActivity() {
         startActivity(intent)
     }
 
+
+
     fun readFromFileNorma() {
         val lines: List<String> = applicationContext.assets
             .open("norma.txt")
