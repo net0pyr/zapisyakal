@@ -13,6 +13,16 @@
         android:theme="@style/Theme.Zapisyakal"
         tools:targetApi="31">
         <activity
+            android:name=".AddMeal"
+            android:exported="false"
+            android:label="@string/title_activity_main5"
+            android:theme="@style/Theme.Zapisyakal" />
+        <activity
+            android:name=".SearchMeal"
+            android:exported="false"
+            android:label="@string/title_activity_main4"
+            android:theme="@style/Theme.Zapisyakal" />
+        <activity
             android:name=".Settings"
             android:exported="false"
             android:label="@string/title_activity_main3"

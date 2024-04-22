@@ -12,4 +12,5 @@
     <color name="unchoose">#AC7DFF</color>
     <color name="fillProgressBar">#6778FF</color>
     <color name="emptyProgressBar">#8288C1</color>
+    <color name="searchLine">#415CE1</color>
 </resources>
